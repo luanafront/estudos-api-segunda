@@ -1,0 +1,35 @@
+#root > div {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(196, 229, 255);
+}
+.data {
+    color: rgb(123, 6, 232);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.cabecalho {}
+    .titulo{
+        font-family: 'Courier New', Courier, monospace;
+    }
+.principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+    .div_imagem {
+        display: block;
+        height: 180px;
+        border-radius: 20px;
+        box-shadow: rgb(123, 6, 232) 0px 7px 29px 0px;
+        margin-bottom: 20px;
+    }
+    .botao {
+        margin: 10px auto;
+    }
+        
+    
