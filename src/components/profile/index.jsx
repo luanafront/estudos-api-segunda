@@ -4,7 +4,6 @@ import axios from "axios";
 import { Button } from '@mui/material/';
 import ReactLoading from 'react-loading';
 import "./index.css"
-import githubLogo from "./github.png"
 
 
 const Profile = () => {
@@ -35,7 +34,7 @@ const Profile = () => {
             <div className="loading">
                 <ReactLoading 
                     type="spokes"
-                    color="#f00"
+                    color="#7b06e8"
                     height={100} 
                     width={50}
                 />
@@ -45,12 +44,13 @@ const Profile = () => {
                     <h1 className="titulo">Meu Perfil</h1>
                 </header>
                 <main className="principal">
-                    <p>{profileData.email}</p>
-                    <p>{profileData.first_name}</p>
-                    <p>{profileData.last_name}</p>
                     <div className="div_imagem">
                         <img className="imagem_perfil" alt="imagem" src={profileData.image_profile}/>
                     </div>
+                    <p>Email: {profileData.email}</p>
+                    <p>Nome: {profileData.first_name} {profileData.last_name}</p>
+                    <p>Github desse Projeto:
+                         <a href="https://github.com/luanafront/estudos-api-segunda"> Clique AQUI</a></p>
                     <div className="botao">
                         <Button 
                             variant="contained"
@@ -61,9 +61,7 @@ const Profile = () => {
                     </div>
                 </main>
                 <footer className="rodape">
-                    {/* <a href="https://github.com/luanafront/estudos-api-domingo">
-                         <img alt="github" className='imagem__github' src={githubLogo}/> 
-                    </a> */}
+            
                 </footer>
                
             </div>

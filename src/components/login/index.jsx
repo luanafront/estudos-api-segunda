@@ -1,14 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import { TextField, Button } from '@mui/material/';
-import { Routes, useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom';
+import "./index.css"
 
 
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [login, setLogin] = useState(false)
 
   const navigate = useNavigate()
 
@@ -28,7 +27,7 @@ const Login = () => {
     axios.post("https://62913677665ea71fe142a512.mockapi.io/api/v1/login/", data).then((res)=>{
       let token = res.data.token
       localStorage.setItem("token", token)
-      setLogin(true)
+  
       let status = res.status
       if(status === 201){
           /**
@@ -41,37 +40,33 @@ const Login = () => {
     })
     
   }
-  const deleteToken = () => {
-    localStorage.clear()
-    setLogin(false)
-  }
   useEffect(() => {
     let token = localStorage.getItem("token")
     if(token !== null){
-      setLogin(true)
       navigate("/profile/")
     }
   },[])
 
   return (
     <div className="Login">
+      <h1 className="titulo">Login</h1>
       <TextField 
-      id="outlined-basic" 
-      label="Email" 
-      variant="outlined" 
-      margin="normal"
-      type="email"
-      onChange={getValueEmail}
-      value={email}
+        id="outlined-basic" 
+        label="Email" 
+        variant="outlined" 
+        margin="normal"
+        type="email"
+        onChange={getValueEmail}
+        value={email}
       />
       <TextField 
-      id="outlined-basic" 
-      label="Password" 
-      variant="outlined" 
-      margin="normal"
-      onChange={getValuePassword}
-      value={password}
-      type="password"
+        id="outlined-basic" 
+        label="Password" 
+        variant="outlined" 
+        margin="normal"
+        onChange={getValuePassword}
+        value={password}
+        type="password"
       />
       <Button
        variant="contained"

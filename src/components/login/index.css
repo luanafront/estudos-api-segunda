@@ -1,0 +1,9 @@
+.Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.titulo {
+   color: rgb(123, 6, 232);
+}
